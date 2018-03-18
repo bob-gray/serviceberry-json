@@ -1,0 +1,27 @@
+{
+  "name": "serviceberry-json",
+  "version": "1.0.0",
+  "description": "JSON serialization plugin for serviceberry",
+  "main": "plugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bob-gray/serviceberry-json.git"
+  },
+  "keywords": [
+    "json",
+    "serialization",
+    "serviceberry",
+    "api",
+    "rest",
+    "http"
+  ],
+  "author": "Bob Gray <gray.bob98@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bob-gray/serviceberry-json/issues"
+  },
+  "homepage": "https://github.com/bob-gray/serviceberry-json#readme"
+}
