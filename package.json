@@ -1,6 +1,6 @@
 {
   "name": "serviceberry-json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JSON serialization plugin for serviceberry",
   "main": "plugin.js",
   "scripts": {
@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/bob-gray/serviceberry-json/issues"
   },
-  "homepage": "https://github.com/bob-gray/serviceberry-json#readme"
+  "homepage": "https://github.com/bob-gray/serviceberry-json#readme",
+  "peerDependencies": {
+    "serviceberry": ">=0.2.0"
+  }
 }
