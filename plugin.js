@@ -1,7 +1,5 @@
 "use strict";
 
-const {statusCodes, HttpError} = require("serviceberry");
-
 module.exports = {
 	contentType: "application/json",
 
@@ -24,6 +22,7 @@ module.exports = {
 			try {
 				body = JSON.parse(content);
 			} catch (error) {
+				const {statusCodes, HttpError} = require("serviceberry");
 				throw new HttpError(error, statusCodes.BAD_REQUEST);
 			}
 			
