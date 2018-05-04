@@ -4,7 +4,11 @@
   "description": "JSON serialization plugin for serviceberry",
   "main": "plugin.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run lint && npm run test-coverage",
+    "lint": "eslint plugin.js",
+    "lint:spec": "eslint spec/**",
+    "test": "jasmine",
+    "test-coverage": "nyc --include=plugin.js --reporter=lcov --reporter=text npm test"
   },
   "repository": {
     "type": "git",
@@ -26,5 +30,13 @@
   "homepage": "https://github.com/bob-gray/serviceberry-json#readme",
   "peerDependencies": {
     "serviceberry": ">=0.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "jasmine": "^3.1.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "node-mocks-http": "^1.6.7",
+    "nyc": "^11.6.0",
+    "serviceberry": "^0.3.0"
   }
 }
