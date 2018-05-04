@@ -7,7 +7,7 @@ module.exports = {
 		var body = response.getBody(),
 			content;
 
-		if (body) {
+		if (typeof body !== "undefined") {
 			content = JSON.stringify(body);
 		}
 
@@ -23,9 +23,9 @@ module.exports = {
 				body = JSON.parse(content);
 			} catch (error) {
 				const {statusCodes, HttpError} = require("serviceberry");
+
 				throw new HttpError(error, statusCodes.BAD_REQUEST);
 			}
-			
 		}
 
 		request.proceed(body);
