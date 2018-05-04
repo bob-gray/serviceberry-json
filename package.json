@@ -1,6 +1,6 @@
 {
   "name": "serviceberry-json",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JSON serialization plugin for serviceberry",
   "main": "plugin.js",
   "scripts": {
