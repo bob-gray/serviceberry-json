@@ -17,7 +17,11 @@ API
 
 ### serialize(request, response)
 
-Tranforms the respone body into a JSON string
+Transforms the response body into a JSON string.
+
+*If the response body is a readable stream, it will be piped through a JSON serializer stream. Objects are transformed
+into a stream that's entire output is a valid JSON array - `[` followed by each object serialized as JSON and separated by
+a comma (except last object) and a new line (LF) followed by `]`.*
 
 ### deserialize(request, response)
 

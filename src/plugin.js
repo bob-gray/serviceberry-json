@@ -1,13 +1,17 @@
 "use strict";
 
-module.exports = {
+const JsonSerializerStream = require("./JsonSerializerStream");
+
+module.exports = Object.freeze(Object.assign(Object.create(null), {
 	contentType: "application/json",
 
 	serialize (request, response) {
 		var body = response.getBody(),
 			content;
 
-		if (typeof body !== "undefined") {
+		if (response.isBodyStreamable()) {
+			content = body.pipe(new JsonSerializerStream());
+		} else if (typeof body !== "undefined") {
 			content = JSON.stringify(body);
 		}
 
@@ -22,12 +26,10 @@ module.exports = {
 			try {
 				body = JSON.parse(content);
 			} catch (error) {
-				const {statusCodes, HttpError} = require("serviceberry");
-
-				throw new HttpError(error, statusCodes.BAD_REQUEST);
+				request.fail(error, "Bad Request");
 			}
 		}
 
 		request.proceed(body);
 	}
-};
+}));
